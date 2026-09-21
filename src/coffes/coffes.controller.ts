@@ -1,0 +1,19 @@
+import { Controller, Get, Param, Post, Body } from '@nestjs/common';
+
+@Controller('coffees')
+export class CoffesController {
+    @Get("flavors")
+    findAll(){
+        return "This action return all coffees";
+    }
+
+    @Get(":id")
+    findOne(@Param('id') id : string){
+        return `This action returns #${id} coffee`;
+    }
+
+    @Post()
+    create(@Body() body : any){
+        return body;
+    }
+}
